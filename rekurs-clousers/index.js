@@ -1,19 +1,19 @@
 // Рекурсия
 
 function pow(x, n) {
-	if (n == 1) {
-		return x;
-	}
-	else {
-		return x * pow(x, n - 1);
-	}
+  if (n == 1) {
+  return x;
+  }
+  else {
+    return x * pow(x, n - 1);
+  }
 }
 
 console.log(pow(2, 3));
 
 
 function pow(x, n) {
-	return (n == 1) ? x : x * pow(x, n - 1);
+  return (n == 1) ? x : x * pow(x, n - 1);
 }
 
 console.log(pow(2, 3))
@@ -21,20 +21,20 @@ console.log(pow(2, 3))
 // Остаточные параметры (...)
 
 function small(...args) {
-	let sum = 0;
-	for (let arg of args) {
-	   sum += arg;
-	}
-	return sum;
+  let sum = 0;
+  for (let arg of args) {
+      sum += arg;
+  }
+  return sum;
 }
 
 console.log(small(1, 2, 3))
 
 function showName(firstName, lastName, ...titles) {
-	console.log(`${firstName} ${lastName}`);
-	console.log(titles[0]);
-	console.log(titles[1]);
-	console.log(titles.length);
+  console.log(`${firstName} ${lastName}`);
+  console.log(titles[0]);
+  console.log(titles[1]);
+  console.log(titles.length);
 }
 
 showName('Ashot', 'Poghosyan', 'Armen', 'Arsen')
@@ -62,7 +62,7 @@ console.log([...str]);
 let name = 'John';
 
 function sayHi() {
-	console.log('Hi ' + name);
+  console.log('Hi ' + name);
 }
 
 name = 'Pete'
@@ -74,21 +74,21 @@ sayHi();
 
 
 function num(a, b) {
-	function sum() {
-		return a + b;
-	} 
+  function sum() {
+    return a + b;
+  } 
 
-	console.log(sum())
+  console.log(sum())
 }
 
 num(1, 2);
 
 
 function mackCounter() {
-	let count = 0;
-	return function() {
-		return count++;
-	};
+  let count = 0;
+  return function() {
+  return count++;
+  };
 }
 
 let counter = mackCounter();
@@ -102,10 +102,10 @@ console.log(counter1());
 
 
 function makeWorker() {
-	let name = 'Pete';
-	return function() {
-		console.log(name);
-	}
+  let name = 'Pete';
+  return function() {
+  console.log(name);
+  }
 }
 
 let name = 'John';
@@ -125,18 +125,15 @@ const arr3 = arr2.concat(arr, arr1, 'str', {});
 console.log(arr3);
 
 function func(...arr) {
-	let arrai = [];
-	for (let key of arr) {
-		if (Array.isArray(key)) {
-			for (let i of key) {
-				arrai.push(i);
-			}
-		}
-		else {
-			arrai.push(key);
-		}
-	}
-	return arrai;
+  let arrai = [];
+  for (let key of arr) {
+    if (Array.isArray(key)) {
+        arrai.push(...key);
+    else {
+      arrai.push(key);
+    }
+  }
+  return arrai;
 }
 console.log(func(p, t, 'str', {}, d))
 
@@ -144,29 +141,27 @@ console.log(func(p, t, 'str', {}, d))
 // find
 
 let g = [
-    {
-       age: 20,
-    },
-    {
-	   age: 10,
-    },
-    {
-	   age: 30,
-    }
+  {
+     age: 20,
+  },
+  {
+  age: 10,
+  },
+  {
+  age: 30,
+  }
 ]
 
-console.log(g.find((item) => item.age === 10 ));
+// console.log(g.find((item) => item.age === 10 ));
 
-function funcfind(callback, arr) {
-	for (let i = 0; i < arr.length; i++) {
-		callback(arr[i], i, arr) ;
-	}
+function funcfind(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+  if(callback(arr[i], i, arr)) {
+      return arr[i];
+  }
+  }
 }
 
-funcfind((arg, i, arrai) => {
-	if(arg.age === 10) {
-		console.log(arg.age);
-	} 
-}, g);
+console.log(funcfind(g, (elem) => elem.age === 10));
 
 
