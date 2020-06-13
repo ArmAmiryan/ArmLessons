@@ -1,47 +1,47 @@
-// Класс: базовый синтаксис
+// // Класс: базовый синтаксис
 
-class User {
-  constructor(name) {
-    this.name = name;
-  }
-  sayHi() {
-  	console.log(this.name)
-  }
-}
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHi() {
+//   	console.log(this.name)
+//   }
+// }
 
-const user = new User('Stiv');
-user.sayHi();
+// const user = new User('Stiv');
+// user.sayHi();
 
-// Наследование классов
+// // Наследование классов
 
-class Animal {
-  constructor(name) {
-    this.name = name;
-	this.speed = 0;
-  }
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+// 	this.speed = 0;
+//   }
 
-  run(speed) {
-	this.speed = speed;
-    console.log(`${this.name} run is a ${this.speed}`)
-  }
+//   run(speed) {
+// 	this.speed = speed;
+//     console.log(`${this.name} run is a ${this.speed}`)
+//   }
 
-  stop() {
-	console.log(`${this.name} stoped`)
-  }
-} 
+//   stop() {
+// 	console.log(`${this.name} stoped`)
+//   }
+// } 
 
-const animal = new Animal('my animal');
+// const animal = new Animal('my animal');
 
 
 
-class Rabbit extends Animal {
-  constructor(name, earLength) {
-	super(name);
-	this.earLength = earLength;
-  }
-}
+// class Rabbit extends Animal {
+//   constructor(name, earLength) {
+// 	super(name);
+// 	this.earLength = earLength;
+//   }
+// }
 
-const rabbit = new Rabbit('black rabbit', 10);
+// const rabbit = new Rabbit('black rabbit', 10);
 
 
 
