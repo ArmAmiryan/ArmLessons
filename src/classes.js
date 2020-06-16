@@ -45,51 +45,52 @@
 
 
 
-class Machine{
-  constructor(name) {
-	this.name = name;
-  }
+// class Machine{
+//   constructor(name) {
+// 	this.name = name;
+//   }
 
-  setWater(value = 200) {
-  	this.water = value;
-  }
+//   setWater(value = 200) {
+//   	this.water = value;
+//   }
 
-  start() {
-  	if(this.water) {
-  	this.water = 0;
-  	console.log('started')
-  	}
-  	else{
-  	console.log('not start, scored a water')
-    }
-  }
+//   start() {
+//   	if(this.water) {
+//   	this.water = 0;
+//   	console.log('started')
+//   	}
+//   	else{
+//   	console.log('not start, scored a water')
+//     }
+//   }
 
-  stop() {
-  	console.log('stop')
-  }
-}
+//   stop() {
+//   	console.log('stop')
+//   }
+// }
 
-class CoffeeMachine extends Machine{
-  constructor(name){
-	super(name);
-  }
+// class CoffeeMachine extends Machine{
+//   constructor(name){
+// 	super(name);
+//   }
 
-  setCoffe(val = 50){
-    this.coffe = val;
-  }
+//   setCoffe(val = 50){
+//     this.coffe = val;
+//   }
 
-  start() {
-	if(this.coffe){
-	this.coffe = 0;
-	super.start();
-  } else {
-	console.log('not start, Add to coffe and water');
-  }
-  }
+//   start() {
+// 	if(this.coffe){
+// 	this.coffe = 0;
+// 	super.start();
+//   } else {
+// 	console.log('not start, Add to coffe and water');
+//   }
+//   }
 
-  stop() {
-	super.stop()
-  }
-}
+//   stop() {
+// 	super.stop()
+//   }
+// }
 
-const coffemachine = new CoffeeMachine('coffeeMachine')
+// const coffemachine = new CoffeeMachine('coffeeMachine')
+
