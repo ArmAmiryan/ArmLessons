@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.container {
+			height: 300px;
+            width: 200px;
+            margin: 0 auto;
+            border: 1px solid black;
+            display: none;
+		}
+		.btn {
+			margin-left: 176px;
+		}
+	</style>
+</head>
+<body>
+<button class="Click">Click me</button>
+<div class = "container">
+	<button class="btn">X</button>
+</div>
+<script>
+	const container = document.querySelector('.container')
+	const openTab = document.querySelector('.Click')
+	const closeTab = document.querySelector('.btn')
+
+	function handleClick(display) {
+       container.style.display = display
+	}
+
+	openTab.addEventListener('click', (e) => handleClick('block'))
+	closeTab.addEventListener('click', (e) => handleClick('none'))
+
+
+</script>
+</body>
+</html>

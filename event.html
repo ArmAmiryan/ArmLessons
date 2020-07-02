@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#drop{
+			height: 100px;
+			width:100px;
+			background-color: green;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="drop"></div>
+     <script>
+     	const drop = document.getElementById('drop')
+     drop.addEventListener('mousedown', (e) => {
+     	e.preventDefault()
+     	const {pageX, pageY} = event;
+
+     	const coord = {
+     		x: pageX,
+     		y: pageY,
+     	}
+
+     	const shift = {
+     		left: coord.x - drop.offsetLeft,
+     		top : coord.y - drop.offsetTop,
+     	}
+
+     	const mouseMove = e =>{
+     		e.preventDefault()
+                drop.style.left = e.pageX - shift.left + 'px'
+                drop.style.top = e.pageY - shift.top + 'px'
+     	}
+
+    	const mouseUp = e => {
+     		e.preventDefault()
+     		document.removeEventListener('mousemove', mouseMove)
+     		document.removeEventListener('mouseup', mouseUp)
+     	}
+
+     	document.addEventListener('mousemove', mouseMove);
+     	document.addEventListener('mouseup', mouseUp)
+     } )
+    </script>
+</body>
+</html>
